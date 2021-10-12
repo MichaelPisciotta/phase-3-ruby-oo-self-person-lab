@@ -22,16 +22,25 @@ class Person
     end
 
     def happiness=(value)
-        @happiness = value
-        if value > 10
-            10
-        else
-            value
-        end 
+    @happiness = if value > 10
+                    10
+                elsif
+                    value < 0
+                    0
+                else
+                    value
+                end 
     end
 
     def hygiene=(value)
-        @hygiene = value
+        @hygiene = if value > 10
+            10
+        elsif
+            value < 0
+            0
+        else
+            value
+        end 
     end
 
 
@@ -65,7 +74,17 @@ class Person
         "♪ another one bites the dust ♫"
      end
      def call_friend(friend)
-        self.happiness += 3
+        self.happiness +=3
+        @happiness= if @happiness > 10
+            10
+        elsif
+            @happiness < 0
+            0
+        else
+            @happiness
+        end 
+
+
         "Hi #{friend}! It's Stella. How are you?"
      end
 
