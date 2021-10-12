@@ -20,9 +20,16 @@ class Person
     def bank_account=(value)
         @bank_account = value
     end
+
     def happiness=(value)
-        @happiness = value.floor
+        @happiness = value
+        if value > 10
+            10
+        else
+            value
+        end 
     end
+
     def hygiene=(value)
         @hygiene = value
     end
