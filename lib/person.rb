@@ -29,10 +29,16 @@ class Person
 
 
     def clean?
-       if self.hygiene > 7 ? true : false
+       if self.hygiene > 7  
+            :true  
+       else
+            :false
     end
     def happy?
-        if self.happiness > 7 ? true : false
+        if self.happiness > 7  
+            :true  
+        else
+            :false
      end
      def get_paid(amount)
          self.bank_account += amount 
@@ -62,6 +68,5 @@ class Person
         else
                "blah blah blah blah blah"
      end 
-
 
 end
