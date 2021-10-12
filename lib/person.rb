@@ -2,7 +2,7 @@ require 'pry'
 
 class Person
 
-    attr_writer :name 
+    attr_reader :name 
     attr_accessor :bank_account, :happiness, :hygiene
 
     def initialize(name)
@@ -21,7 +21,7 @@ class Person
         @bank_account = value
     end
     def happiness=(value)
-        @happiness = value
+        @happiness = value.floor
     end
     def hygiene=(value)
         @hygiene = value
@@ -30,16 +30,20 @@ class Person
 
     def clean?
        if self.hygiene > 7  
-            :true  
+            true  
        else
-            :false
+            false
+       end 
     end
+
     def happy?
         if self.happiness > 7  
-            :true  
+            true  
         else
-            :false
+            false
+        end
      end
+
      def get_paid(amount)
          self.bank_account += amount 
          "all about the benjamins"
@@ -60,14 +64,14 @@ class Person
 
      def start_conversation(friend, topic)
         if topic == "politics"
-            self.happiness -= 2
+             self.happiness -= 2
             "blah blah partisan blah lobbyist"
         elsif topic == "weather"
-                self.happiness += 1
+             self.happiness += 1
                 "blah blah sun blah rain"
         else
-               "blah blah blah blah blah"
+              "blah blah blah blah blah"
+        end
      end
-    end
 
 end
